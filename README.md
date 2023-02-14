@@ -57,6 +57,13 @@ The project has a default SECRET_KEY. Make sure to set it up for a production en
 ## ALLOWED_HOSTS
 The project has a default ALLOWED_HOSTS. Make sure to set it up for a production environment.
 
+## AWS environment variables
+
+```shell script
+$ export AWS_ACCESS_KEY_ID="YOUR_AWS_ACCESS_KEY_ID"
+$ export AWS_SECRET_ACCESS_KEY="YOUR_AWS_SECRET_ACCESS_KEY"
+```
+
 ## Docker
 
 ### Build the container
@@ -72,4 +79,16 @@ docker run \
     --name gamerban-run \
     gamerban \
     gunicorn gamerban.wsgi:application --bind 0.0.0.0:8000
+```
+
+### Stop the container
+
+```shell script
+docker stop gamerban-run
+```
+
+### Remove the container
+
+```shell script
+docker rm gamerban-run
 ```
